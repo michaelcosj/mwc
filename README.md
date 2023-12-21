@@ -16,5 +16,6 @@ Make sure you have [golang](https://go.dev/) installed
 Options are the basic ones from wc. It can also read from stdin
 
 ## Todo
-- help option (maybe use clap or something for reading args)
-- that total count thing wc does when you give it multiple files
+- [] help option (maybe use clap or something for reading args)
+- [] that total count thing wc does when you give it multiple files
+- [] '-L' option from wc
