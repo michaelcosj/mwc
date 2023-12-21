@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-// using string for debugging purposes in errors
+// using string for debugging purposes
 // int/iota would probably be more efficient
 const (
 	BYTES = "bytes"
@@ -21,7 +21,8 @@ const (
 
 type CountOptionType string
 
-// this is just me avoiding forloop + switch statement
+// this is just to avoid a forloop + switch statement when evaluating options
+// might be less readable and/or efficient
 var optionsTable = map[string]CountOptionType{
 	"c": BYTES,
 	"w": WORDS,
@@ -30,7 +31,7 @@ var optionsTable = map[string]CountOptionType{
 }
 
 // used for counting bytes when filepath is given
-// faster to use this for counting bytes than bufio scanner
+// apparently more efficient than manually counting
 func getFileSize(filePath string) (int, error) {
 	fileInfo, err := os.Stat(filePath)
 	if err != nil {
